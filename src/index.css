@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* DayLY Pastel Color Palette */
+    --background: 30 100% 99%;
+    --foreground: 240 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 15% 20%;
+
+    /* Baby Pink Primary */
+    --primary: 350 100% 92%;
+    --primary-foreground: 350 50% 35%;
+
+    /* Lavender Secondary */
+    --secondary: 240 67% 94%;
+    --secondary-foreground: 240 50% 35%;
+
+    /* Mint Green Accent */
+    --accent: 120 40% 85%;
+    --accent-foreground: 120 50% 25%;
+
+    /* Beige Muted */
+    --muted: 45 70% 86%;
+    --muted-foreground: 45 15% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 20% 90%;
+    --input: 240 20% 95%;
+    --ring: 350 100% 92%;
+
+    --radius: 0.75rem;
+
+    /* Custom gradient tokens */
+    --gradient-hero: linear-gradient(135deg, hsl(350, 100%, 95%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(30, 100%, 99%) 0%, hsl(240, 67%, 97%) 100%);
+    --gradient-text: linear-gradient(135deg, hsl(340, 80%, 45%) 0%, hsl(350, 90%, 55%) 50%, hsl(330, 100%, 70%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.08);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Soft dark mode with mauve tones */
+    --background: 260 20% 12%;
+    --foreground: 240 20% 95%;
+
+    --card: 260 20% 15%;
+    --card-foreground: 240 20% 95%;
+
+    --popover: 260 20% 15%;
+    --popover-foreground: 240 20% 95%;
+
+    --primary: 350 60% 70%;
+    --primary-foreground: 240 20% 12%;
+
+    --secondary: 240 40% 25%;
+    --secondary-foreground: 240 20% 95%;
+
+    --accent: 120 30% 45%;
+    --accent-foreground: 240 20% 95%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 240 10% 65%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 240 20% 95%;
+
+    --border: 260 20% 20%;
+    --input: 260 20% 20%;
+    --ring: 350 60% 70%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(260, 30%, 20%) 0%, hsl(240, 30%, 18%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(260, 20%, 12%) 0%, hsl(240, 25%, 15%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Poppins',sans-serif];
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-['Poppins',sans-serif];
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-soft {
+    background: var(--gradient-soft);
+  }
+  
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  .shadow-hover {
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .gradient-text {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Aesthetic animations */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  
+  @keyframes swing {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(-10deg);
+    }
+    75% {
+      transform: rotate(10deg);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-swing {
+    animation: swing 2s ease-in-out infinite;
+    transform-origin: top center;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 0.3s;
+  }
+}
