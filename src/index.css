@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
     /* DayLY Pastel Color Palette */
@@ -18,19 +14,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 240 15% 20%;
 
-    /* Baby Pink Primary */
+    /* Primary */
     --primary: 350 100% 92%;
     --primary-foreground: 350 50% 35%;
 
-    /* Lavender Secondary */
+    /* Secondary */
     --secondary: 240 67% 94%;
     --secondary-foreground: 240 50% 35%;
 
-    /* Mint Green Accent */
     --accent: 120 40% 85%;
     --accent-foreground: 120 50% 25%;
 
-    /* Beige Muted */
     --muted: 45 70% 86%;
     --muted-foreground: 45 15% 40%;
 
@@ -73,7 +67,6 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Soft dark mode with mauve tones */
     --background: 260 20% 12%;
     --foreground: 240 20% 95%;
 
@@ -149,7 +142,7 @@ All colors MUST be HSL.
     background-clip: text;
   }
   
-  /* Aesthetic animations */
+  /* animations */
   @keyframes float {
     0%, 100% {
       transform: translateY(0px);
