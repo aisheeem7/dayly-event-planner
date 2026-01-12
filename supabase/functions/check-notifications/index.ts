@@ -49,25 +49,10 @@ Deno.serve(async (req) => {
 
     console.log(`Found ${events?.length || 0} events to notify`);
 
-    // Here you could:
-    // 1. Send email notifications via Resend
-    // 2. Send push notifications
-    // 3. Store notifications in a notifications table for users to see when they log in
-    
     // For now, we'll just log them
     if (events && events.length > 0) {
       for (const event of events) {
         console.log(`Event notification: ${event.title} for user ${event.user_id} at ${event.time}`);
-        
-        // You could insert into a notifications table here
-        // await supabase.from("notifications").insert({
-        //   user_id: event.user_id,
-        //   event_id: event.id,
-        //   message: `${event.title} is starting now!`,
-        //   read: false,
-        // });
-      }
-    }
 
     return new Response(
       JSON.stringify({
